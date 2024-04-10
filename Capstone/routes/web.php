@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.homepage');
-});
+// Route::resource('/', function () {
+//     return view('pages.homepage');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,5 +29,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('/events', \App\Http\Controllers\EventController::class);
+Route::resource('/', \App\Http\Controllers\HomeController::class);
 
 require __DIR__.'/auth.php';

@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Event;
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
+use App\Models\Event;
+use Illuminate\Http\Request;
 
-class EventController extends Controller
+class HomeController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         $events = Event::all();
-        return view('events', compact('events'));
+        return view('pages.homepage', compact('events'));
+       
     }
 
     /**
@@ -38,8 +40,7 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        $event = Event::find($event->id);
-        return view('event-detail', compact('event'));
+        
     }
 
     /**
