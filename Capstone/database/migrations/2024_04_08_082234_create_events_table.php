@@ -14,12 +14,14 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->foreignId('creator_id')->constrained('users')->onDelete('cascade');
+            $table->string('image')->nullable();
             $table->string('title');
             $table->text('description');
             $table->date('date');
             $table->time('time');
             $table->string('location');
             $table->string('category');
+            $table->string('status')->default('In attesa');
             $table->timestamps();
         });
     }

@@ -13,29 +13,6 @@ h4 {
     font-weight: 400 !important;
 }
 
-.myBtn {
-    padding: 0.2rem 0.5rem;
-    border-radius: 3rem;
-    border: none;
-    background-color: #6A7568;
-    color: white !important;
-    font-weight: 600;
-    width: 6rem;
-    height: 70%;
-    transition: ease-in-out 0.3s;
-
-    &:hover,
-    &:focus {
-        background-color: #3C423B;
-        color: white;
-    }
-
-    &:mouseleave {
-        background-color: #6A7568;
-        color: white;
-    }
-}
-
 .mianav {
     background-color: #EDEAE6;
     border: none;
@@ -43,6 +20,13 @@ h4 {
     top: 0;
     z-index: 9999;
 }
+
+.header {
+    background-color: #EDEAE6;
+}
+
+
+
 
 /* Regole CSS per la sezione hero */
 .hero {

@@ -17,14 +17,17 @@ class EventFactory extends Factory
      */
     public function definition(): array
     {
+        $status = ['In attesa', 'Confermato', 'Cancellato'];
         return [
             'creator_id' => User::factory()->create()->id,
+            'image' => null,
             'title' => $this->faker->sentence(),
             'description' => $this->faker->paragraph(),
             'date' => $this->faker->date(),
             'time' => $this->faker->time(),
             'location' => $this->faker->address(),
             'category' => $this->faker->word(),
+            'status' => $status[rand(0, 2)],
         ];
     }
 }

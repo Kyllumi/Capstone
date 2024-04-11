@@ -1,19 +1,14 @@
 <x-app-layout>
     <x-slot name="header" class="myHeader">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Eventi disponibili') }}
+            {{ __('Gestisci gli eventi') }}
         </h2>
     </x-slot>
 
-    @Auth
-    <p>Hai un'idea? Clicca qui per aggiungerla!!</p>
-    <a href="{{ route('events.create') }}" class="btn">Crea evento</a>
-    @endAuth
         <div class="latest-content d-flex flex-wrap justify-content-center mb-4">
 
             <!-- Ciclo tutti gli eventi -->
             @foreach ($events as $event)
-            @if($event->status == "Confermato")
             <div class="card m-3">
                         @if(!empty($event->image))
                 <img src="{{ asset('images/' . $event->image) }}" alt="Immagine dell'evento">
@@ -31,7 +26,6 @@
                     </div>
                 </div>
             </div>
-            @endif
             @endforeach
         </div>
 
