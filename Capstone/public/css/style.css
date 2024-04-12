@@ -159,6 +159,7 @@ h4 {
 
 }
 
+/* Regole CSS per la sezione footer */
 .footer {
     height: 90vh;
     width: 100%;
@@ -272,5 +273,118 @@ h4 {
 @media (min-width: 769px) and (max-width: 1024px) {
     .card {
         width: calc(50% - 1rem);
+    }
+}
+
+/* Bottoni admin */
+button.btn {
+    font-size: 1rem !important;
+    padding: 0.5rem 1.5rem !important;
+    margin: 0 auto 1rem auto !important;
+    border-radius: 3rem !important;
+    border: none !important;
+    background-color: #6A7568 !important;
+    color: white !important;
+    font-weight: 600 !important;
+    transition: ease-in-out 0.3s !important;
+
+    &:hover,
+    &:focus {
+        background-color: #3C423B !important;
+        color: white !important;
+    }
+
+    &:mouseleave {
+        background-color: #6A7568 !important;
+        color: white !important;
+    }
+}
+
+/* Stili per la sezione dei dettagli */
+.date {
+    font-weight: 600;
+}
+
+.detailDate {
+    background-color: #6A7568;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    color: white;
+}
+
+.left h2 {
+    font-size: 2.5rem;
+    margin: 1.5rem 0;
+}
+
+.left .detailDescription {
+    font-size: 1.2rem;
+}
+
+/* Stili per dispositivi con larghezza massima di 768px (modalità mobile) */
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left {
+        width: 100%;
+    }
+
+    .left h2 {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+
+    .left .detailDescription {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+
+    .date {
+        margin: 0;
+        justify-content: space-between;
+    }
+}
+
+/* Stili per dispositivi con larghezza superiore a 768px (modalità desktop) */
+@media only screen and (min-width: 768px) {
+    .container {
+        display: flex;
+    }
+
+    .left {
+        width: 50%;
+
+    }
+
+    .event-info {
+        margin: 0 1.5rem;
+
+    }
+
+    .right {
+        width: 50%;
+    }
+
+    .right img {
+        max-height: 80vh;
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .date {
+        p {
+            margin: 0 1rem;
+        }
+    }
+}
+
+/* Regole css per il form di creazione */
+.containerForm {
+    margin-top: 2rem;
+    input {
+        border-radius: 0.5rem;
     }
 }

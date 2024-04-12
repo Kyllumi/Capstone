@@ -34,7 +34,7 @@ class EventController extends Controller
     {
     // Validazione dei dati del modulo
     $request->validate([
-        'image' => 'image|mimes:jpeg,png,jpg,gif,avif,webp|max:2048',
+        'image' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048',
         'title' => 'required',
         'description' => 'required',
         'date' => 'required',
@@ -90,7 +90,8 @@ class EventController extends Controller
      */
     public function update(UpdateEventRequest $request, Event $event)
     {
-        //
+        $event->update($request->all());
+        return redirect()->back()->with('success', 'Evento aggiornato con successo!');
     }
 
     /**
@@ -98,12 +99,8 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        $event->delete();
+        return redirect()->back()->with('success', 'Evento eliminato con successo!');
     }
 
-    public function confirm(Event $event) {
-        $event->status = "Confermato";
-        $event->save();
-        return redirect()->route('events.index')->with('success', 'Evento confermato con successo!');
-    }
 }

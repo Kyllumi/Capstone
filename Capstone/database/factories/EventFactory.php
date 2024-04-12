@@ -17,7 +17,7 @@ class EventFactory extends Factory
      */
     public function definition(): array
     {
-        $status = ['In attesa', 'Confermato', 'Cancellato'];
+        $status = ['In attesa', 'Confermato'];
         return [
             'creator_id' => User::factory()->create()->id,
             'image' => null,
@@ -27,7 +27,7 @@ class EventFactory extends Factory
             'time' => $this->faker->time(),
             'location' => $this->faker->address(),
             'category' => $this->faker->word(),
-            'status' => $status[rand(0, 2)],
+            'status' => $status[rand(0, 1)],
         ];
     }
 }
